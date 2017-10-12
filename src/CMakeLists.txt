@@ -63,11 +63,11 @@ target_include_directories(calg-static PUBLIC
 )
 
 install(TARGETS calg-shared calg-static
-        EXPORT CAlgConfig
+        EXPORT calg-config
         LIBRARY DESTINATION lib
         ARCHIVE DESTINATION lib)
 install(FILES ${SRC_H_MASTER_FILE} DESTINATION include/libcalg-1.0)
 install(FILES ${SRC_H_FILES} DESTINATION include/libcalg-1.0/libcalg)
 
-install(EXPORT CAlgConfig DESTINATION share/CAlg/cmake)
-export(TARGETS calg-shared calg-static FILE CAlgConfig.cmake)
+install(EXPORT calg-config DESTINATION lib/cmake/CAlg)
+export(TARGETS calg-shared calg-static FILE calg-config.cmake)
